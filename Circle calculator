@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circle Calculator</title>
+</head>
+<body>
+    <h2>Circle Calculator</h2>
+    <label for="radius">Enter radius:</label>
+    <input type="number" id="radius" step="0.01">
+    <button onclick="calculateCircle()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+    function calculateCircle() {
+    const PI = 3.14159;
+    var radius = parseFloat(document.getElementById("radius").value);
+    var area = PI * radius * radius;
+    var circumference = 2 * PI * radius;
+    var result = "For a circle with radius " + radius + ":<br>" +
+                 "Area: " + area.toFixed(2) + " square units<br>" +
+                 "Circumference: " + circumference.toFixed(2) + " units";
+    document.getElementById("result").innerHTML = result;
+    </script>
+</body>
+</html>
