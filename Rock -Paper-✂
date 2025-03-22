@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box
+        {
+            text-align: center;
+            width:50%;
+            border: 2px slid black;
+            padding:20px;
+            border-radius: 10px;
+            margin:auto;
+
+        }
+        .button
+        {
+           background-color: rgba(226, 208, 43, 0.24);
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+    <h1>Rock-Paper-Scissors</h1>
+    <div id="result"></div>
+    
+    <button class="button" onclick="check('Rock')" style="width: 100px ;height: 100px;" id="Rock">Rock</button>
+    <button class="button" onclick="check('Paper')" style="margin-left: 20px; width: 100px ;height: 100px; " id="Paper">Paper</button>
+    <button class="button" onclick="check('Scissors')" style="margin-left: 20px; width: 100px ;height: 100px;" id="Scissors">Scissors</button>
+   
+    <script >
+        var score=0;
+function check(choice)
+{
+    //choice is user choice
+    const choice_Array = ["Rock","Paper","Scissors"];
+    var comp_choice = Math.floor(Math.random()*3);
+    var res = document.getElementById("result");
+  
+    if(choice == choice_Array[comp_choice])
+    {
+        score++;
+        res.innerHTML =`<h1>Score:${score}</h1>`;
+    }
+    else
+    {
+        score--;
+        res.innerHTML =`<h1>Score:${score}</h1>`;
+    }
+
+}
+    </script>
+     </div>
+</body>
+</html>
